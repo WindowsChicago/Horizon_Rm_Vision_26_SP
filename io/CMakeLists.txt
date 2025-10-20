@@ -8,6 +8,7 @@ add_subdirectory(serial)
 add_library(io STATIC 
     hikrobot/hikrobot.cpp    
     mindvision/mindvision.cpp  
+    daheng/daheng.cpp  
     usbcamera/usbcamera.cpp  
     camera.cpp
     cboard.cpp
@@ -35,7 +36,22 @@ else()
   message(FATAL_ERROR "Unsupported architecture: ${CMAKE_HOST_SYSTEM_PROCESSOR}!")
 endif()
 
-target_link_libraries(io MvCameraControl MVSDK usb-1.0 yaml-cpp serial)
+# daheng
+# set(SDK_DIR /usr/lib/libgxiapi.so) #大恒
+target_include_directories(io PUBLIC daheng/include)
+if(CMAKE_SYSTEM_PROCESSOR MATCHES "x86_64")
+  target_link_directories(io PUBLIC daheng/lib/amd64)
+elseif(CMAKE_SYSTEM_PROCESSOR MATCHES "aarch64")
+  target_link_directories(io PUBLIC daheng/lib/arm64)
+else()
+  message(FATAL_ERROR "Unsupported architecture: ${CMAKE_HOST_SYSTEM_PROCESSOR}!")
+endif()
+# 检查大恒库文件是否存在
+if(NOT EXISTS "./daheng/lib/amd64/libgxiapi.so")
+    message(WARNING "libgxiapi.so not found at: ./daheng/lib/amd64/")
+endif()
+
+target_link_libraries(io MvCameraControl MVSDK gxiapi usb-1.0 yaml-cpp serial)
 
 ################## 检查 ROS 环境 ##################
 find_package(ament_cmake QUIET)

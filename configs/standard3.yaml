@@ -51,9 +51,9 @@ second_tolerance: 2 # 远距离射击容差，degree
 judge_distance: 2 #距离判断阈值
 auto_fire: true # 是否由自瞄控制射击
 
-camera_name: "hikrobot"
-exposure_ms: 2.5
-gain: 16.9
+camera_name: "daheng"
+exposure_ms: 30
+gamma: 2.85
 vid_pid: "2bdf:0001"
 
 #  1  0  0
