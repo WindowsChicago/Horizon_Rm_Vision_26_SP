@@ -349,5 +349,5 @@ DPS = 单位时间射击窗口占比 \times 射频 \times 单发子弹伤害
 #Horizon_Rm_Vision_26_SP
 ##by ZYL
 ###M1:基于REV4,修复了大恒相机的曝光问题，为yolov5模式新增了TensorRT10推理框架的支持，使其支持在Jetapck6使用TensorRT10加速推理以及带NVIDIA独显的设备使用TensorRT10加速推理，是正式准备测试的第一个版本
-
+###M2:根据io/ros2部分代码逆转写出的sp_msgs通信包，恢复了其和ros2程序通信的能力
 
