@@ -346,4 +346,8 @@ DPS = 单位时间射击窗口占比 \times 射频 \times 单发子弹伤害
 ## 项目成员
 王骁扬、杨佳轩、奚睿豪、俞选涛、吴圳楠、杨瑞灵、程翔宇
 
+#Horizon_Rm_Vision_26_SP
+##by ZYL
+###M1:基于REV4,修复了大恒相机的曝光问题，为yolov5模式新增了TensorRT10推理框架的支持，使其支持在Jetapck6使用TensorRT10加速推理以及带NVIDIA独显的设备使用TensorRT10加速推理，是正式准备测试的第一个版本
+
 

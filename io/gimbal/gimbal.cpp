@@ -221,7 +221,7 @@ void Gimbal::send(
   } 
   else 
   {
-      mode = 1;      // 不控制，，对应NT_M6的自瞄模式默认标志位001
+      mode = 1;      // 不控制，对应NT_M6的自瞄模式默认标志位001
   }
 
   // 赋值给tx_data_

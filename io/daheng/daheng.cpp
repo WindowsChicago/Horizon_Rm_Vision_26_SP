@@ -115,15 +115,15 @@ void DaHengCamera::open()
   // // 自动白平衡(1：自动;0：手动) 
   // status_ = GXSetEnum(hDevice_, GX_ENUM_BALANCE_WHITE_AUTO, 1);
 
-  // // 默认开启自动白平衡
-  // if (!set_white_balance_auto(true)) {
-  //   tools::logger()->warn("Failed to set auto white balance!");
-  // }
-
-  // 手动白平衡
-  if (!set_white_balance(10,1,2)) {
+  // 默认开启自动白平衡
+  if (!set_white_balance_auto(true)) {
     tools::logger()->warn("Failed to set auto white balance!");
   }
+
+  // // 手动白平衡
+  // if (!set_white_balance(10,1,2)) {
+  //   tools::logger()->warn("Failed to set auto white balance!");
+  // }
 
   // 开启视频流
   if (!stream_on()) {
